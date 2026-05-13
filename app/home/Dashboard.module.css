@@ -1,0 +1,265 @@
+.pageWrapper {
+  min-height: 100vh;
+  background-color: var(--md-sys-color-background);
+  color: var(--md-sys-color-on-background);
+  display: flex;
+  flex-direction: column;
+}
+
+.topHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  background-color: var(--md-sys-color-surface);
+  border-bottom: 1px solid var(--md-sys-color-outline-variant);
+}
+
+.pageTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0;
+  color: var(--md-sys-color-on-surface);
+}
+
+.userProfile {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: var(--md-sys-color-primary);
+  color: var(--md-sys-color-on-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.greeting {
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+/* Restored Grid Layout */
+.dashboardGrid {
+  display: grid;
+  grid-template-columns: 380px 1fr; /* Slightly widened the left column to fit the accordion notes better */
+  gap: 2rem;
+  padding: 2rem;
+  flex-grow: 1;
+  align-items: stretch; /* Ensures both columns stretch to the bottom */
+}
+
+/* Sidebar Specifics */
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  height: calc(100vh - 150px); /* Subtracts header height to allow scrolling within the sidebar */
+}
+
+.sectionHeading {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--md-sys-color-primary);
+  margin: 0 0 0.5rem 0;
+}
+
+.journeyList {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  overflow-y: auto; /* Adds a scrollbar specifically to the list if cards expand past the screen height */
+  padding-right: 0.5rem; 
+  padding-bottom: 2rem;
+}
+
+/* Accordion Card Styling */
+.journeyCard {
+  background-color: var(--md-sys-color-surface-container);
+  border: 1px solid var(--md-sys-color-outline-variant);
+  border-radius: 12px;
+  transition: all 0.2s ease;
+  overflow: hidden; 
+  flex-shrink: 0; /* Prevents cards from squishing when scrolling */
+}
+
+.cardHeader {
+  padding: 1.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  cursor: pointer;
+}
+
+.journeyCard:hover:not(.activeCard) {
+  background-color: var(--md-sys-color-surface-container-high);
+}
+
+.activeCard {
+  border-color: var(--md-sys-color-primary);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.journeyTitle {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin: 0 0 0.25rem 0;
+  color: var(--md-sys-color-on-surface);
+}
+
+.journeyTime {
+  font-size: 0.875rem;
+  color: var(--md-sys-color-on-surface-variant);
+  margin: 0;
+}
+
+.statusBadge {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  background-color: var(--md-sys-color-secondary-container);
+  color: var(--md-sys-color-on-secondary-container);
+  padding: 0.35rem 0.75rem;
+  border-radius: 16px;
+  flex-shrink: 0;
+}
+
+/* Expanded Content Styling */
+.expandedContent {
+  padding: 0 1.25rem 1.25rem 1.25rem;
+  animation: fadeIn 0.3s ease;
+}
+
+.metaDivider {
+  height: 1px;
+  background-color: var(--md-sys-color-outline-variant);
+  margin-bottom: 1rem;
+}
+
+.metaRow {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.875rem;
+}
+
+.metaLabel {
+  font-weight: 600;
+  color: var(--md-sys-color-on-surface-variant);
+}
+
+.metaValue {
+  color: var(--md-sys-color-on-surface);
+}
+
+.timelineHeading {
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+  color: var(--md-sys-color-primary);
+  margin: 0 0 0.75rem 0;
+}
+
+.timelineList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.timelineItem {
+  display: flex;
+  gap: 1rem;
+  align-items: baseline;
+  padding-left: 0.5rem;
+  border-left: 2px solid var(--md-sys-color-outline-variant);
+}
+
+.timestamp {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--md-sys-color-on-surface-variant);
+  min-width: 75px; 
+}
+
+.noteText {
+  font-size: 0.95rem;
+  line-height: 1.4;
+  color: var(--md-sys-color-on-surface);
+}
+
+/* Restored Main Content Area */
+.mainContent {
+  background-color: var(--md-sys-color-surface-container-low);
+  border-radius: 16px;
+  border: 1px dashed var(--md-sys-color-outline);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.placeholderBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--md-sys-color-on-surface-variant);
+  font-size: 1rem;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 960px) {
+  .dashboardGrid {
+    /* Changes from 2 columns to 1 column */
+    grid-template-columns: 1fr; 
+    gap: 1.5rem;
+    padding: 1.5rem;
+  }
+
+  .sidebar {
+    /* Removes the fixed height so it can stack naturally on smaller screens */
+    height: auto; 
+  }
+
+  .journeyList {
+    /* Caps the height of the list on mobile so it doesn't push the 
+       bottom widget canvas completely off the screen */
+    max-height: 50vh; 
+    padding-bottom: 1rem;
+  }
+  
+  /* Stack the header profile information on tiny screens */
+  .topHeader {
+    padding: 1rem 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Minor tweaks for standard mobile phone screens */
+  .dashboardGrid {
+    padding: 1rem;
+  }
+  
+  .cardHeader {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .statusBadge {
+    align-self: flex-start;
+  }
+}
