@@ -9,7 +9,6 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
       attribute="class" 
       defaultTheme="system" 
       enableSystem={true}
-      // This maps the library's themes to your specific global CSS classes
       value={{
         light: "light",
         dark: "dark",
