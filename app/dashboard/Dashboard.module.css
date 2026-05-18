@@ -22,12 +22,14 @@
   color: var(--md-sys-color-on-surface);
 }
 
+/* Existing user profile */
 .userProfile {
   display: flex;
   align-items: center;
   gap: 0.75rem;
 }
 
+/* Existing avatar */
 .avatar {
   width: 36px;
   height: 36px;
@@ -40,27 +42,48 @@
   font-weight: bold;
 }
 
+.profileText {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.1rem;
+}
+
 .greeting {
   font-size: 0.875rem;
   font-weight: 500;
+  color: var(--md-sys-color-on-surface);
 }
 
-/* Restored Grid Layout */
+.logoutButton {
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--md-sys-color-error);
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.logoutButton:hover {
+  opacity: 0.7;
+  text-decoration: underline;
+}
 .dashboardGrid {
   display: grid;
-  grid-template-columns: 380px 1fr; /* Slightly widened the left column to fit the accordion notes better */
+  grid-template-columns: 380px 1fr; 
   gap: 2rem;
   padding: 2rem;
   flex-grow: 1;
-  align-items: stretch; /* Ensures both columns stretch to the bottom */
+  align-items: stretch; 
 }
 
-/* Sidebar Specifics */
 .sidebar {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  height: calc(100vh - 150px); /* Subtracts header height to allow scrolling within the sidebar */
+  height: calc(100vh - 150px);
 }
 
 .sectionHeading {
@@ -74,19 +97,18 @@
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  overflow-y: auto; /* Adds a scrollbar specifically to the list if cards expand past the screen height */
+  overflow-y: auto; 
   padding-right: 0.5rem; 
   padding-bottom: 2rem;
 }
 
-/* Accordion Card Styling */
 .journeyCard {
   background-color: var(--md-sys-color-surface-container);
   border: 1px solid var(--md-sys-color-outline-variant);
   border-radius: 12px;
   transition: all 0.2s ease;
   overflow: hidden; 
-  flex-shrink: 0; /* Prevents cards from squishing when scrolling */
+  flex-shrink: 0; 
 }
 
 .cardHeader {
@@ -222,7 +244,7 @@
   to { opacity: 1; transform: translateY(0); }
 }
 
-@media (max-width: 960px) {
+@media (max-width: 800px) {
   .dashboardGrid {
     /* Changes from 2 columns to 1 column */
     grid-template-columns: 1fr; 

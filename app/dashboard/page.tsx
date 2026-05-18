@@ -2,6 +2,9 @@
 
 import React, { useState } from 'react';
 import styles from './Dashboard.module.css';
+import { logoutAction } from '../actions/authenticate';
+
+
 
 export default function Dashboard() {
   // State tracks the ID of the expanded journey. Null means all are closed.
@@ -55,9 +58,22 @@ export default function Dashboard() {
     <main className={styles.pageWrapper}>
       <header className={styles.topHeader}>
         <h1 className={styles.pageTitle}>Overview</h1>
+        
+        {/* Updated User Profile Section */}
         <div className={styles.userProfile}>
-          <div className={styles.avatar}>A</div>
-          <span className={styles.greeting}>Welcome, Admin</span>
+          <div className={styles.avatar}>L</div>
+          
+          <div className={styles.profileText}>
+            <span className={styles.greeting}>Welcome, Lane</span>
+            
+            {/* The Logout Form */}
+            <form action={logoutAction}>
+              <button type="submit" className={styles.logoutButton}>
+                Log Out
+              </button>
+            </form>
+          </div>
+
         </div>
       </header>
 
